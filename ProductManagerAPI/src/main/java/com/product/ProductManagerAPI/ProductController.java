@@ -14,11 +14,13 @@ public class ProductController implements WebMvcConfigurer{
 
     private final List<Product> productos = new ArrayList<>();
 
+    public ProductController() {
+        productos.add(new Product("Producto 1", "Descripción del producto 1", 10, "Categoría 1"));
+    }
+
     @GetMapping("/product")
     public List<Product> obtenerTodosLosProductos() {
         return productos;
     }
-
-    
     
 }
